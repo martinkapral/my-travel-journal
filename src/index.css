@@ -1,13 +1,170 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --salmon: #f55a5a;
+  --dark-blue: #2b283a;
+  --grey: #918e9b;
+  --light-grey: #f5f5f5;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fff;
+  color: var(--dark-blue);
+}
+
+* {
+  margin: 0;
+}
+
+/* NAVBAR */
+
+.navbar {
+  background: var(--salmon);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  color: #fff;
+  box-shadow: 0px 1px 15px #c9c9c9;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+}
+
+.world-logo {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+
+.page-title {
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* MAIN CONTENT */
+
+.wrapper {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.card .content {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1em;
+}
+
+.card {
+  display: flex;
+  margin: 2rem;
+  font-size: 0.64rem;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.pin {
+  width: 15px;
+  height: 15px;
+}
+
+.card .photo-container {
+  overflow: hidden;
+  max-width: 10rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #c9c9c9;
+  margin-right: 20px;
+}
+
+.card .photo {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  width: 2000px;
+}
+
+.card .photo:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.location {
+  display: inline-flex;
+  align-items: center;
+}
+
+.country {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-left: 0px;
+}
+
+.card .location {
+  display: inline-flex;
+  align-items: center;
+}
+
+.card .location .country {
+  letter-spacing: 0.17em;
+
+  padding-inline: 0.4em;
+}
+
+.card .location .google-maps {
+  color: var(--grey);
+  margin-left: auto;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+hr {
+  border: 1px solid #efefef;
+
+  margin-top: 20px;
+}
+
+/* MEDIA */
+
+@media (min-width: 40rem) {
+  .card {
+    max-width: 45rem;
+    font-size: 0.8rem;
+  }
+
+  .card .photo-container {
+    max-width: 20rem;
+  }
+
+  .card .photo {
+    aspect-ratio: 4 / 3;
+  }
 }
